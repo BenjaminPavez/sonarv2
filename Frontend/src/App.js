@@ -8,7 +8,6 @@ import Login from "./components/Login";
 import Central from './components/Central';
 import FormatoHoras from './components/FormatoHoras';
 import Personal from './components/Personal';
-import Pruebas from './components/Pruebas';
 import {
   BrowserRouter as Router,
   Route,
@@ -46,7 +45,6 @@ function App() {
         <Route path="/horasHospital" Component={horaFormatoHospital}/>
         <Route path="/usuario/" Component={Usuario}/>
         <Route path="/navbar/" Component={navbar}/>
-        <Route path="/Pruebas/" Component={Pruebas}/>
         <Route path="/personal/" Component={Personal}/>
         <Route path="/register" Component={Register}/>
         <Route path="/registerworker" Component={registerWorker}/>
