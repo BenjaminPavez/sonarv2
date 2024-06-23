@@ -231,13 +231,13 @@ function Pruebas() {
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading text-center">
-                                        <span><strong><span class="glyphicon glyphicon-folder-open"> </span> Imagenes</strong></span>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="panel panel-default">
+                                    <div className="panel-heading text-center">
+                                        <span><strong><span className="glyphicon glyphicon-folder-open"> </span> Imagenes</strong></span>
                                     </div>
-                                    <table class="table table-bordered table-hover vmiddle">
+                                    <table className="table table-bordered table-hover vmiddle">
                                         <thead>
                                             <tr>
                                                 <th></th>
@@ -249,34 +249,34 @@ function Pruebas() {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-center"><span class="glyphicon glyphicon-file"></span></td>
+                                                <td className="text-center"><span className="glyphicon glyphicon-file"></span></td>
                                                 <td>Radiografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>19-abr-24 08:45</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center"><span class="glyphicon glyphicon-folder-close"></span></td>
+                                                <td className="text-center"><span className="glyphicon glyphicon-folder-close"></span></td>
                                                 <td>Ecografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>10-oct-21 09:48</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center"><span class="glyphicon glyphicon-compressed"></span></td>
+                                                <td className="text-center"><span className="glyphicon glyphicon-compressed"></span></td>
                                                 <td>Ecografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>12-sep-19 08:36</td>
