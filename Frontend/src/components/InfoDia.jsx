@@ -33,6 +33,16 @@ import { Tabs, Tab } from 'react-bootstrap';
 function InfoDia() {
   const [datos, setDatos] = useState([]);
 
+  const [ecografiaData, setEcografiaData] = useState([]);
+  const [resonanciaData, setResonanciaData] = useState([]);
+  const [radiografiaData, setRadiografiaData] = useState([]);
+  const [escanerData, setEscanerData] = useState([]);
+
+  const [inputValue, setInputValue] = useState('');
+  const [editingRow, setEditingRow] = useState(-1);
+
+  console.log(datos);
+
   useEffect(() => {
     //Hacer una solicitud al servidor cuando el componente se monta
     fetch('http://localhost:5000/print-db') //Cambiado a puerto 5000
@@ -40,9 +50,6 @@ function InfoDia() {
       .then(data => {
         if (data.success) {
           setDatos(data.data);
-          
-
-          
           //Transformar datos para cada tipo de examen
           const ecografiaData = data.data.filter(item => item.tipo === "Ecografia").map(item => ({
             name: item.name,
@@ -87,14 +94,6 @@ function InfoDia() {
       .catch(error => console.error('Error al obtener datos:', error));
   }, []); //El segundo argumento [] significa que se ejecutará solo una vez al montar el componente
 
-  const [ecografiaData, setEcografiaData] = useState([]);
-  const [resonanciaData, setResonanciaData] = useState([]);
-  const [radiografiaData, setRadiografiaData] = useState([]);
-  const [escanerData, setEscanerData] = useState([]);
-
-  const [inputValue, setInputValue] = useState('');
-  const [editingRow, setEditingRow] = useState(-1);
-
   const handleEdit = (index, data, setData) => {
     const regex = /^(9|10|11|12|15|16):00/;
     const regex2 = /^(8|9|10|11|12|14|15):30/;
@@ -117,49 +116,49 @@ function InfoDia() {
     setEditingRow(index);
   };
 
-    //Función para renderizar las tabs
-    const renderTabs = (data, setData, title) => {
-      return (
-        <Tab eventKey={title} title={title}>
-          <div className="table-container">
-            <table>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr key={index}>
-                    {item && typeof item === 'object' && Object.values(item).map((value, i) => (
-                      <td key={i}>
-                        {i ===0 ? (
-                          <a href={`/usuario`}>
-                          {value}
-                          </a>
-                        ) : (
-                          value
-                        )}
-                        </td>
-                    ))}
-                    <td>
-                      {editingRow === index ? (
-                        <div>
-                          <input
-                            type="text"
-                            value={inputValue}
-                            onChange={handleInputChange}
-                            placeholder="Cambiar Hora"
-                          />
-                          <button onClick={() => handleEdit(index, data, setData)}>Guardar</button>
-                        </div>
+  //Función para renderizar las tabs
+  const renderTabs = (data, setData, title) => {
+    return (
+      <Tab eventKey={title} title={title}>
+        <div className="table-container">
+          <table>
+            <tbody>
+              {data.map((item, index) => (
+                <tr key={index}>
+                  {item && typeof item === 'object' && Object.values(item).map((value, i) => (
+                    <td key={i}>
+                      {i ===0 ? (
+                        <a href={`/usuario`}>
+                        {value}
+                        </a>
                       ) : (
-                        <button onClick={() => handleEditRow(index)}>Editar</button>
+                        value
                       )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Tab>
-      );
-    };
+                      </td>
+                  ))}
+                  <td>
+                    {editingRow === index ? (
+                      <div>
+                        <input
+                          type="text"
+                          value={inputValue}
+                          onChange={handleInputChange}
+                          placeholder="Cambiar Hora"
+                        />
+                        <button onClick={() => handleEdit(index, data, setData)}>Guardar</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => handleEditRow(index)}>Editar</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Tab>
+    );
+  };
 
 
   return (

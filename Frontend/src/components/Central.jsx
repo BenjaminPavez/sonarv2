@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Row, Col } from "react-bootstrap";
+import React, { useEffect} from 'react';
+import { Button} from "react-bootstrap";
 import './../assets/css/Central.css';
 import axios from 'axios';
 import { mostrarData } from '../redux/actions/dataPacienteActions.js';

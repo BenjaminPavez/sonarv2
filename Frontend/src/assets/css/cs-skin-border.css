@@ -39,7 +39,6 @@ div.cs-skin-border {
 }
 
 .cs-skin-border .cs-selected span::after {
-	/*content: "\e64b";*/
 	content: "\e64c";
 	color: #ddd9c9;
 	font-size: 1.5em;

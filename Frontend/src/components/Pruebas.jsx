@@ -1,6 +1,7 @@
+
 // -----------------------------------------------------------------------------
 //
-// Informacion del Usuario
+// Pruebas del Sistema
 //
 // Desarrollado por: Alessandro Cintolesi
 //                   Ignacio Muñoz
@@ -22,9 +23,11 @@
 //
 //
 // DESCRIPCIÓN:
-// La pagina muestra la informacion del usuario.
+// La pagina de pruebas.
 //
 // -----------------------------------------------------------------------------
+
+import React from 'react';
 
 //Estilos
 import './../assets/profile/assets/plugins/bootstrap/css/bootstrap.min.css';
@@ -32,69 +35,14 @@ import './../assets/profile/css/style.css';
 import './../assets/profile/css/colors/default-dark.css';
 import './../assets/profile/assets/plugins/bootstrap/js/bootstrap.bundle.min.js';
 
-import React, { useEffect} from 'react';
-import axios from 'axios';
-import { mostrarData } from '../redux/actions/dataPacienteActions.js';
-import { useSelector, useDispatch } from "react-redux";
 
-function calcularEdad(fechaNacimiento) {
-    // Convierte la fecha de nacimiento a un objeto Date
-    const fechaNac = new Date(fechaNacimiento);
-    
-    // Obtiene la fecha actual
-    const fechaActual = new Date();
-    
-    // Calcula la diferencia de años
-    let edad = fechaActual.getFullYear() - fechaNac.getFullYear();
-    
-    // Verifica si la persona aún no ha cumplido años este año
-    const mesActual = fechaActual.getMonth();
-    const diaActual = fechaActual.getDate();
-    const mesNac = fechaNac.getMonth();
-    const diaNac = fechaNac.getDate();
-    
-    if (mesActual < mesNac || (mesActual === mesNac && diaActual < diaNac)) {
-        // Si aún no ha cumplido años este año, resta uno a la edad
-        edad--;
-    }
-    
-    return edad;
-}
-
-
-function User() {
-
-  const dispatch = useDispatch();
-  const dataPaciente = useSelector((store) => store.dataReducer.datas);
-  const isLogged = useSelector((store) => store.authReducer.isLogged);
-
-  // Al montar el componente, realiza la solicitud para obtener los datos de los pacientes
-  useEffect(() => {
-    if (isLogged) {
-      // Realizar la solicitud para obtener los datos de los pacientes
-      axios.get('http://localhost:8080/patientByRut',{
-        headers: {
-          "auth-token": localStorage.getItem("token"),
-        },
-      })
-      .then((data) => {
-        console.log(data);
-        dispatch(mostrarData(data.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
-  }, [dispatch, isLogged]); // Añadir dispatch e isLogged como dependencias
-
-  
-
+function Pruebas() {
   return (
     <div className="fix-header card-no-border fix-sidebar">
         <div className="topbar">
             <nav className="navbar top-navbar navbar-expand-md navbar-light">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="index.html">
                         <b>
                             <img src={require("./../assets/profile/assets/images/favicon.png")} alt="homepage" className="dark-logo" />
                         </b>
@@ -163,11 +111,11 @@ function User() {
                         <li>
                             <a className="waves-effect waves-dark" href="map-google.html" aria-expanded="false">
                                 <i className="mdi mdi-earth"></i>
-                                <span className="hide-menu">Pacientes</span>
+                                <span className="hide-menu">Map</span>
                             </a>
                         </li>
                         <li>
-                            <a className="waves-effect waves-dark" href="AgregarHoraPaciente" aria-expanded="false">
+                            <a className="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false">
                                 <i className="mdi mdi-book-open-variant"></i>
                                 <span className="hide-menu">Agregar Hora</span>
                             </a>
@@ -175,7 +123,7 @@ function User() {
                         <li>
                             <a className="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false">
                                 <i className="mdi mdi-help-circle"></i>
-                                <span className="hide-menu">Estado Equipos</span>
+                                <span className="hide-menu">404</span>
                             </a>
                         </li>
                     </ul>
@@ -190,15 +138,15 @@ function User() {
 
 
 
-        <div className="page-wrapper" style={{ maxHeight: '1000px', overflowY: 'auto' }}>
+        <div className="page-wrapper">
             <div className="container-fluid">
                 <div className="row page-titles">
                 <div className="col-md-5 align-self-center">
-                    <h3 className="text-themecolor">Perfil Paciente</h3>
+                    <h3 className="text-themecolor">Perfil</h3>
                 </div>
                 <div className="col-md-7 align-self-center">
                     <a href="https://wrappixel.com/templates/adminpro/" className="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-                    Eliminar
+                    Upgrade to Pro
                     </a>
                 </div>
                 </div>
@@ -208,20 +156,34 @@ function User() {
                     <div className="card-body">
                         <center className="mt-4">
                         <img src={require("./../assets/profile/assets/images/users/paciente.jpg")} alt="Perfil de Juan Bodoque" className="img-circle" width="150" />
-                        <h4 className="card-title mt-2">{dataPaciente.name} {dataPaciente.lastname}</h4>
+                        <h4 className="card-title mt-2">Juan Bodoque</h4>
                         <h6 className="card-subtitle">Paciente</h6>
+                        <div className="row text-center justify-content-md-center">
+                            <div className="col-4">
+                            <a className="link">
+                                <i className="icon-people"></i>
+                                <font className="font-medium">254</font>
+                            </a>
+                            </div>
+                            <div className="col-4">
+                            <a className="link">
+                                <i className="icon-picture"></i>
+                                <font className="font-medium">54</font>
+                            </a>
+                            </div>
+                        </div>
                         </center>
                     </div>
                     </div>
                 </div>
                 <div className="col-lg-8 col-xlg-9">
                     <div className="card">
-                    <div className="card-body" style={{ maxHeight: '700px', overflowY: 'auto' }} >
+                    <div className="card-body">
                         <form className="form-horizontal form-material mx-2">
                         <div className="form-group">
                             <label className="col-md-12">Nombre Completo</label>
                             <div className="col-md-12">
-                            {dataPaciente.name} {dataPaciente.lastname}
+                            <input type="text" placeholder="Juan Carlos Bodoque" className="form-control form-control-line" />
                             </div>
                         </div>
                         <div className="form-group">
@@ -235,35 +197,37 @@ function User() {
                         <div className="form-group">
                             <label className="col-md-12">Rut</label>
                             <div className="col-md-12">
-                            {dataPaciente.rut}
+                            <input type="text" placeholder="12345678-9"  className="form-control form-control-line" />
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-md-12">Telefono</label>
                             <div className="col-md-12">
-                            {dataPaciente.phone_number}
+                            <input type="text" placeholder="912345678" className="form-control form-control-line" />
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-md-12">Edad</label>
                             <div className="col-md-12">
-                            {calcularEdad(dataPaciente.birthdate)} años
+                            <input type="text" placeholder="12" className="form-control form-control-line" />
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-md-12">Alergias</label>
                             <div className="col-md-12">
-                            <ul>
-                                {dataPaciente.allergies.map((alergia, index) => (
-                                    <li key={index}>{alergia}</li>
-                                ))}
-                            </ul>
+                            <textarea rows="5" placeholder="Paracetamol" className="form-control form-control-line"></textarea>
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-sm-12">Tramo Fonasa</label>
                             <div className="col-sm-12">
-                            {dataPaciente.fonasa}
+                            <select className="form-control form-control-line">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                            </select>
                             </div>
                         </div>
 
@@ -276,7 +240,8 @@ function User() {
                                     <table class="table table-bordered table-hover vmiddle">
                                         <thead>
                                             <tr>
-                                                <th>Tipo Examen</th>
+                                                <th></th>
+                                                <th>Examen</th>
                                                 <th>Acciones</th>
                                                 <th>Tamaño</th>
                                                 <th>Fecha</th>
@@ -284,7 +249,7 @@ function User() {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                
+                                                <td class="text-center"><span class="glyphicon glyphicon-file"></span></td>
                                                 <td>Radiografia</td>
                                                 <td class="text-center">
                                                     <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
@@ -295,7 +260,7 @@ function User() {
                                                 <td>19-abr-24 08:45</td>
                                             </tr>
                                             <tr>
-                                                
+                                                <td class="text-center"><span class="glyphicon glyphicon-folder-close"></span></td>
                                                 <td>Ecografia</td>
                                                 <td class="text-center">
                                                     <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
@@ -306,7 +271,7 @@ function User() {
                                                 <td>10-oct-21 09:48</td>
                                             </tr>
                                             <tr>
-                                               
+                                                <td class="text-center"><span class="glyphicon glyphicon-compressed"></span></td>
                                                 <td>Ecografia</td>
                                                 <td class="text-center">
                                                     <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
@@ -340,4 +305,4 @@ function User() {
   );
 }
 
-export default User;
+export default Pruebas;
