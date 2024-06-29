@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Row, Container, Alert } from "react-bootstrap";
 import './../assets/css/Central.css';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import FormatoHoras from './FormatoHoras.jsx';
 
 function AgregarHoraPaciente(){

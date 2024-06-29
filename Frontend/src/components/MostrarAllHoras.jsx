@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row, Container, Alert, Button, Form } from "react-bootstrap";
+import { Col, Row, Container, Alert, Form } from "react-bootstrap";
 import './../assets/css/Central.css';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchHoras } from "../redux/actions/horaPacienteActions.js";
-import FormatoHoras from './FormatoHoras.jsx';
 import HoraFormatoHospital from './HoraFormatoHospital.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

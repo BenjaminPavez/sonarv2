@@ -31,7 +31,7 @@ import './../assets/css/InfoDia.css';
 import { Tabs, Tab } from 'react-bootstrap';
 
 function InfoDia() {
-  const [datos, setDatos] = useState([]);
+  const [setDatos] = useState([]);
 
   useEffect(() => {
     //Hacer una solicitud al servidor cuando el componente se monta

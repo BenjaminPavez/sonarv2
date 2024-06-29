@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Card, ListGroup, ListGroupItem, Form} from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function convertirFecha(fecha) {
 	// Dividir la cadena de fecha en un array [yyyy, mm, dd]

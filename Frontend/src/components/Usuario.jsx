@@ -32,8 +32,7 @@ import './../assets/profile/css/style.css';
 import './../assets/profile/css/colors/default-dark.css';
 import './../assets/profile/assets/plugins/bootstrap/js/bootstrap.bundle.min.js';
 
-import React, { useEffect, useState } from 'react';
-import { Button, Row, Col } from "react-bootstrap";
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { mostrarData } from '../redux/actions/dataPacienteActions.js';
 import { useSelector, useDispatch } from "react-redux";

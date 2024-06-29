@@ -21,8 +21,7 @@ function convertirFecha(fecha) {
 
 function Hora(props) {
 
-	const {id, date, start_time, end_time, exam_type, diagnosis, rut_doctor, rut_assistant} = useSelector((s) => s.pacienteReducer.horas.find((v) => v.id === props.id));
-	//const dispatch = useDispatch();
+	const {id, date, start_time, end_time, exam_type} = useSelector((s) => s.pacienteReducer.horas.find((v) => v.id === props.id));
 
 	return id ? (
 		<Card>
