@@ -61,18 +61,18 @@ function Personal() {
                     </ul>
                     <ul className="navbar-nav my-lg-0">
                         <li className="nav-item hidden-xs-down search-box">
-                            <a className="nav-link hidden-sm-down waves-effect waves-dark">
+                            <a className="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0);">
                                 <i className="ti-search"></i>
                             </a>
                             <form className="app-search">
                                 <input type="text" className="form-control" placeholder="Search & enter" />
-                                <a className="srh-btn">
+                                <a className="srh-btn" href="javascript:void(0);">
                                     <i className="ti-close"></i>
                                 </a>
                             </form>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link waves-effect waves-dark" href="#">
+                            <a className="nav-link waves-effect waves-dark" href="javascript:void(0);">
                                 <img src={require("./../assets/profile/assets/images/users/doctor.jpg")} alt="user" className="profile-pic" />
                             </a>
                         </li>
