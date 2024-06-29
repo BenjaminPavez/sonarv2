@@ -150,15 +150,15 @@ function Personal() {
                     </a>
                 </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Estado del Equipo</h4>
-                                <h6 class="card-subtitle">Dia: 21-04-2024</h6>
-                                <h6 class="card-subtitle">Ubicacion: Radiografia</h6>
-                                <div class="table-responsive">
-                                    <table class="table">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="card">
+                            <div className="card-body">
+                                <h4 className="card-title">Estado del Equipo</h4>
+                                <h6 className="card-subtitle">Dia: 21-04-2024</h6>
+                                <h6 className="card-subtitle">Ubicacion: Radiografia</h6>
+                                <div className="table-responsive">
+                                    <table className="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>

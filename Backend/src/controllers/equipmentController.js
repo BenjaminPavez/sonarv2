@@ -1,5 +1,6 @@
 import Equipment from '../models/equipment.js';
-
+import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
 
 export default class EquipmentController {
 	async getAll(req, res) {

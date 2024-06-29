@@ -54,7 +54,9 @@ function LoginWorker(props){
 		setPassword(e.target.value);
 	}
 
-
+	/* const handleRegister = (e) => {
+		window.location.href = '/Register'
+	} */
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

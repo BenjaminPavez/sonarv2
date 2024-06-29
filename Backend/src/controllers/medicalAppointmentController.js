@@ -1,4 +1,6 @@
 import MedicalAppointment from '../models/medicalappointment.js';
+import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
 
 export default class MedicalAppointmentController {
 

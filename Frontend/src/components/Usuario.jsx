@@ -32,7 +32,8 @@ import './../assets/profile/css/style.css';
 import './../assets/profile/css/colors/default-dark.css';
 import './../assets/profile/assets/plugins/bootstrap/js/bootstrap.bundle.min.js';
 
-import React, { useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
+import { Button, Row, Col } from "react-bootstrap";
 import axios from 'axios';
 import { mostrarData } from '../redux/actions/dataPacienteActions.js';
 import { useSelector, useDispatch } from "react-redux";
@@ -85,8 +86,7 @@ function User() {
         console.log(err);
       });
     }
-  }, [dispatch, isLogged]); // Añadir dispatch e isLogged como dependencias
-
+  }, []);
   
 
   return (
@@ -94,7 +94,7 @@ function User() {
         <div className="topbar">
             <nav className="navbar top-navbar navbar-expand-md navbar-light">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="index.html">
                         <b>
                             <img src={require("./../assets/profile/assets/images/favicon.png")} alt="homepage" className="dark-logo" />
                         </b>
@@ -267,13 +267,13 @@ function User() {
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading text-center">
-                                        <span><strong><span class="glyphicon glyphicon-folder-open"> </span> Imagenes</strong></span>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="panel panel-default">
+                                    <div className="panel-heading text-center">
+                                        <span><strong><span className="glyphicon glyphicon-folder-open"> </span> Imagenes</strong></span>
                                     </div>
-                                    <table class="table table-bordered table-hover vmiddle">
+                                    <table className="table table-bordered table-hover vmiddle">
                                         <thead>
                                             <tr>
                                                 <th>Tipo Examen</th>
@@ -286,10 +286,10 @@ function User() {
                                             <tr>
                                                 
                                                 <td>Radiografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>19-abr-24 08:45</td>
@@ -297,10 +297,10 @@ function User() {
                                             <tr>
                                                 
                                                 <td>Ecografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>10-oct-21 09:48</td>
@@ -308,10 +308,10 @@ function User() {
                                             <tr>
                                                
                                                 <td>Ecografia</td>
-                                                <td class="text-center">
-                                                    <a href="#"><span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
-                                                    <a href="#"><span class="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
+                                                <td className="text-center">
+                                                    <a href="#"><span className="btn btn-sm btn-danger glyphicon glyphicon-trash"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-primary glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="#"><span className="btn btn-sm btn-warning glyphicon glyphicon-info-sign"></span></a>
                                                 </td>
                                                 <td>523.0 KB </td>
                                                 <td>12-sep-19 08:36</td>

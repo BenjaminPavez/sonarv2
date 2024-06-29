@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, ListGroup, ListGroupItem} from 'react-bootstrap';
-import { useSelector} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+/* import { updateTask } from './redux/actions/pacienteActions.js'; */
 
 function convertirFecha(fecha) {
 	// Dividir la cadena de fecha en un array [yyyy, mm, dd]
@@ -20,7 +21,8 @@ function convertirFecha(fecha) {
 
 function Hora(props) {
 
-	const {id, date, start_time, end_time, exam_type} = useSelector((s) => s.pacienteReducer.horas.find((v) => v.id === props.id));
+	const {id, date, start_time, end_time, exam_type, diagnosis, rut_doctor, rut_assistant} = useSelector((s) => s.pacienteReducer.horas.find((v) => v.id === props.id));
+	//const dispatch = useDispatch();
 
 	return id ? (
 		<Card>

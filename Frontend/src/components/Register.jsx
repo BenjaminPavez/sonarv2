@@ -35,6 +35,8 @@ function Register(props) {
 		const value = e.target.value
 		const allergiesArray = value.split(',').map((allergy) => allergy.trim());
 		setAllergies(allergiesArray)
+
+		//setAllergies(e.target.value);
 	}
 
 	const handleBirthdate = (e) => {

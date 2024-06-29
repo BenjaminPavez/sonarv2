@@ -27,12 +27,13 @@
 // -----------------------------------------------------------------------------
 
 import React, { useState } from "react";
-import { Button, Form} from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { createHora } from '../redux/actions/horaPacienteActions.js';
 import Navbar from './navbar.jsx'
+import moment from 'moment';
 //Estilos
 import './../assets/profile/assets/plugins/bootstrap/css/bootstrap.min.css';
 import './../assets/profile/css/style.css';
@@ -42,6 +43,7 @@ import './../assets/profile/assets/plugins/bootstrap/js/bootstrap.bundle.min.js'
 
 //Funcion Nacho Alessandro
 function FormatoHoras() {
+	const isLogged = useSelector((store) => store.authReducer.isLogged);
 	const [date, setDate] = useState('');
 	const [start_time, setStartTime] = useState('');
     const [end_time, setEndTime] = useState('');
