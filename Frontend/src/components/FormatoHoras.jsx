@@ -30,7 +30,7 @@ import React, { useState } from "react";
 import { Button, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createHora } from '../redux/actions/horaPacienteActions.js';
 import Navbar from './navbar.jsx'
 

@@ -1,7 +1,6 @@
 import React from "react";
 import {Card, ListGroup, ListGroupItem} from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
-/* import { updateTask } from './redux/actions/pacienteActions.js'; */
+import { useSelector } from 'react-redux';
 
 function convertirFecha(fecha) {
 	// Dividir la cadena de fecha en un array [yyyy, mm, dd]
